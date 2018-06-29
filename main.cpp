@@ -34,6 +34,7 @@ int main(){
                 cin>>golesanot;
                 seleccion* N = new seleccion(nombre,ganados,perdidos,empatados,anotados,maxgolea,golesanot);
                 nodo* NM = new nodo(N);
+                Ls->Agregar(NM);
 
                 break;
             }

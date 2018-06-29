@@ -14,6 +14,6 @@ class lista{
         nodo* getlista();
         void setlista(nodo*);
 
-        void agregar(seleccion* s);
+        void agregar(nodo* NO);
 };
 #endif
