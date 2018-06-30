@@ -10,6 +10,59 @@ seleccion::seleccion(string pnombre,string pganados,string pperdidos,string pemp
     golesanot = golesanot; 
 }
 
+string seleccion::getNombre(){
+    return nombre;
+}
+void seleccion::setNombre(string pnombre){
+    this->nombre=pnombre;
+}
+
+string seleccion::getGanados(){
+    return ganados;
+}
+void seleccion::setGanados(string pganados){
+    this->ganados=pganados;
+}
+
+string seleccion::getEmpatados(){
+    return empatados;
+}
+void seleccion::setEmpatados(string pempatados){
+    this->empatados=pempatados;
+}
+
+string seleccion::getPerdidos(){
+    return perdidos;
+}
+void seleccion::setPerdidos(string pperdidos){
+    this->perdidos=pperdidos;
+}
+
+string seleccion::getAnotados(){
+    return anotados;
+}
+void seleccion::setAnotados(string panotados){
+    this->anotados=panotados;
+}
+
+string seleccion::getMaxGolea(){
+    return maxgolea;
+}
+void seleccion::setMaxGolea(string pMaxGolea){
+    this->maxgolea=pMaxGolea;
+}
+
+string seleccion::getGolesAnot(){
+    return golesanot;
+}
+void seleccion::setGolesAnot(string pgolesanot){
+    this->golesanot=pgolesanot;
+}
+
+
+
+
+
 
 
 void seleccion::read(ifstream& in){

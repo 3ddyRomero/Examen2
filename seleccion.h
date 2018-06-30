@@ -31,7 +31,7 @@ class seleccion{
         void setAnotados(string);
 
         string getMaxGolea();
-        void setMaxGolead(string);
+        void setMaxGolea(string);
 
         string getGolesAnot();
         void setGolesAnot(string);

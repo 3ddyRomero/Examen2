@@ -15,6 +15,8 @@ int main(){
     seleccion* N;
     char op = 'y';
     lista* LS = new lista();
+    string nombre,ganados,perdidos,empatados,anotados,maxgolea,golesanot;
+    
     
     
     do{
@@ -35,12 +37,14 @@ int main(){
                 cin>>maxgolea;
                 cout<<"Goles Anotados: "<<endl;
                 cin>>golesanot;
-                N = new seleccion(nombre,ganados,perdidos,empatados,anotados,maxgolea,golesanot);
+                N = new seleccion(N->getNombre(),N->getGanados(),N->getPerdidos(),N->getEmpatados(),N->getAnotados(),
+                N->getMaxGolea(),N->getGolesAnot());
                 nodo* NM = new nodo(N);
                 LS->agregar(NM);
                 break;
             }
             case 2:{
+                
                 nodo* Ll = new nodo(N);
                 LS->listar(Ll);
 
