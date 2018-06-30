@@ -1,6 +1,12 @@
 #include "lista.h"
+#include "nodo.h"
+#include "seleccion.h"
 
 using namespace std;
+
+lista::lista() {
+
+}
 
 lista::lista(nodo* pn){
     n=pn;
@@ -11,10 +17,11 @@ nodo* lista::getlista(){
 }
 
 void lista::setlista(nodo* pno){
-    this->n=pno;
+    n=pno;
+    
 }
 
-void agregar(nodo* pl){
+void lista::agregar(nodo* pl){
     if (n == NULL){
         n = pl;
     }else {
@@ -28,3 +35,6 @@ void agregar(nodo* pl){
     
 }
 
+void lista::listar(nodo* ps){
+    
+}

@@ -8,11 +8,11 @@ using namespace std;
 class nodo{
     private:
         seleccion* selec;
-        nodo* sig;
+        nodo* n = NULL;
 
     public:
         nodo();
-        nodo(nodo* sig);
+        nodo(seleccion* selec);
         nodo* getSeleccion();
         void setSeleccion(nodo*);
 };
