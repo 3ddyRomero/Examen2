@@ -14,7 +14,28 @@ class seleccion{
     public:
         seleccion();
         seleccion(string,string,string,string,string,string,string);
+
+        string getNombre();
+        void setNombre(string);
+
+        string getGanados();
+        void setGanados(string);
+
+        string getPerdidos();
+        void setPerdidos(string);
         
+        string getEmpatados();
+        void setEmpatados(string);
+
+        string getAnotados();
+        void setAnotados(string);
+
+        string getMaxGolea();
+        void setMaxGolead(string);
+
+        string getGolesAnot();
+        void setGolesAnot(string);
+
         void write(ofstream&);
         void read(ifstream&);
 

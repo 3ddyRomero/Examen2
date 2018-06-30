@@ -35,6 +35,13 @@ void lista::agregar(nodo* pl){
     
 }
 
-void lista::listar(nodo* ps){
+void lista::listar(nodo* pl){
+    n=pl;
+    while(n != NULL){
+        cout<<n->getSeleccion()<<",";
+        n = n->getSeleccion();
+
+    }
+
     
 }

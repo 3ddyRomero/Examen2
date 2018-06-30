@@ -10,6 +10,8 @@ seleccion::seleccion(string pnombre,string pganados,string pperdidos,string pemp
     golesanot = golesanot; 
 }
 
+
+
 void seleccion::read(ifstream& in){
   int size;
   in.read(reinterpret_cast<char*>(&size),sizeof(int));

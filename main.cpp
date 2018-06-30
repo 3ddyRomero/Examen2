@@ -41,6 +41,8 @@ int main(){
                 break;
             }
             case 2:{
+                nodo* Ll = new nodo(N);
+                LS->listar(Ll);
 
                 break;
             }
