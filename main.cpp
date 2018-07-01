@@ -73,7 +73,7 @@ int main(){
         salida.close();
 
         //escribir archivo binario
-        ofstream binario("Mundial.dat",ios::binary | ios::app);
+        /*ofstream binario("Mundial.dat",ios::binary | ios::app);
         seleccion -> write(binario);
         binario.close();
 
@@ -83,7 +83,7 @@ int main(){
         Nodo otroNodo;
         otroSeleccion.read(readBinary);
         readBinary.close();
-        cout<<otroSeleccion<<endl;
+        cout<<otroSeleccion<<endl;*/
 
        // delete Nodo;
 
