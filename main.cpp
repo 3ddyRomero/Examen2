@@ -3,28 +3,38 @@
 #include <cstring>
 #include <iostream>
 #include "seleccion.h"
-#include "nodo.h"
-#include "lista.h"
+//#include "nodo.h"
+//#include "lista.h"
 
 using namespace std;
 
+struct Nodo{
+    string Seleccion,ganados,perdidos,empatados,anotados,maxgolea,golesanot;
+    Nodo *sig;
+
+};
 int menu();
+void agregar(Nodo *&, string,string,string,string,string,string,string);
+void Listar(Nodo*,string,string,string,string,string,string,string);
+void eliminar(Nodo *&, string,string,string,string,string,string,string);
+
 
 int main(){
     int opcion = 0;
     seleccion* N;
     char op = 'y';
-    lista* LS = new lista();
-    string nombre,ganados,perdidos,empatados,anotados,maxgolea,golesanot;
+    //lista* LS = new lista();
+    Nodo *n = NULL;
     
+    string Seleccion,ganados,perdidos,empatados,anotados,maxgolea,golesanot;   
     
     
     do{
         switch(menu()){
             case 1:{
-                string nombre,ganados,perdidos,empatados,anotados,maxgolea,golesanot;                
-                cout<<"Nombre: "<<endl;
-                cin>>nombre;
+                             
+                cout<<"Selección: "<<endl;
+                cin>>Seleccion;
                 cout<<"Ganado: "<<endl;
                 cin>>ganados;
                 cout<<"Perdidos: "<<endl;
@@ -37,25 +47,29 @@ int main(){
                 cin>>maxgolea;
                 cout<<"Goles Anotados: "<<endl;
                 cin>>golesanot;
-                N = new seleccion(N->getNombre(),N->getGanados(),N->getPerdidos(),N->getEmpatados(),N->getAnotados(),
-                N->getMaxGolea(),N->getGolesAnot());
-                nodo* NM = new nodo(N);
-                LS->agregar(NM);
+                agregar(n,Seleccion,ganados,perdidos,empatados,anotados,maxgolea,golesanot);
+
+
+
                 break;
             }
             case 2:{
+                //string Pnombre,Pganados,Pperdidos,Pempatados,Panotados,Pmaxgolea,Pgolesanot;    
+                Listar(n,Seleccion,ganados,perdidos,empatados,anotados,maxgolea,golesanot);
+
+                //nodo* Lis = new nodo(N);
+                //LS->listar(Lis);
                 
-                nodo* Ll = new nodo(N);
-                LS->listar(Ll);
+
 
                 break;
             }
             case 3:{
         //escribir archivo de texto
-        /*ofstream salida("Mundial.txt", ios::app);
+        ofstream salida("Mundial.txt", ios::app);
         //seleccion* s = new seleccion();
-        seleccion* s = new seleccion(N->getnombre(),N->getganados(),N->getperdidos(),N->getempatados(),N->getanotados(),N->getmaxgolea(),N->getgolesanot());
-        salida<<*seleccion;
+        Nodo* s = new Nodo();
+        salida<< s;
         salida.close();
 
         //escribir archivo binario
@@ -66,12 +80,12 @@ int main(){
         //leer archivo binario
         ifstream readBinary("Mundial.dat",ios::binary);
 
-        seleccion otroSeleccion;
+        Nodo otroNodo;
         otroSeleccion.read(readBinary);
         readBinary.close();
         cout<<otroSeleccion<<endl;
 
-        delete seleccion;*/
+       // delete Nodo;
 
                 break;
             }
@@ -111,3 +125,54 @@ int menu(){
 
     return opcion;
 }
+
+void Listar(Nodo *ls,string Sele,string g,string p, string e,string an, string max, string gol){
+    Nodo *N = new Nodo();
+    N=ls;
+    N -> Seleccion=Sele;
+    N -> ganados=g;
+    N -> perdidos=p;
+    N -> empatados=e;
+    N -> anotados=an;
+    N -> maxgolea=max;
+    N -> golesanot=gol;
+    while(N != NULL){
+        cout<<N->Seleccion<<endl;
+        /*cout<<" Perdidos: ",N->perdidos;
+        cout<<" Ganados: ",N->empatados;
+        cout<<" Anotados: ",N->anotados;
+        cout<<" Maximo Goleador: ",N->maxgolea;
+        cout<<" Goles de",N->maxgolea;
+        cout<<": ",N->golesanot;
+        cout<<endl;
+        */
+        N = N->sig;
+    } cout<<endl;
+}
+
+void agregar(Nodo *&ls,string Sele,string g,string p, string e,string an, string max, string gol){
+    Nodo *NN = new Nodo();
+    NN -> Seleccion=Sele;
+    NN -> ganados=g;
+    NN -> perdidos=p;
+    NN -> empatados=e;
+    NN -> anotados=an;
+    NN -> maxgolea=max;
+    NN -> golesanot=gol;
+
+    Nodo *tmp = ls;
+    Nodo *tmpb;
+    while((tmp != NULL)&&(tmp->Seleccion<Sele)){
+            tmpb = tmp;
+            tmp = tmp -> sig;
+        }
+        if (ls == tmp){
+            ls= NN;
+        }else{
+            tmpb->sig = NN;
+        }
+        NN->sig = tmp;
+cout<<"El equipo "<<Sele<<" ha sido agregado."<<endl;
+cout<<endl;
+}
+

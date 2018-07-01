@@ -15,6 +15,6 @@ class lista{
         void setlista(nodo*);
 
         void agregar(nodo* n);
-        void listar(nodo* n);
+        void listarlo(nodo* n);
 };
 #endif

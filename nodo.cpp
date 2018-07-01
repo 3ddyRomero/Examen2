@@ -14,3 +14,6 @@ nodo* nodo::getSeleccion(){
 void nodo::setSeleccion(nodo* pselecc){
     n = pselecc;
 }
+nodo::nodo(){
+    
+}

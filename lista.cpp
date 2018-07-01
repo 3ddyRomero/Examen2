@@ -35,7 +35,7 @@ void lista::agregar(nodo* pl){
     
 }
 
-void lista::listar(nodo* pl){
+void lista::listarlo(nodo* pl){
     n=pl;
     while(n != NULL){
         cout<<n->getSeleccion()<<",";
